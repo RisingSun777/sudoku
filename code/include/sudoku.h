@@ -1,4 +1,4 @@
-#define CELL_INIT 0x1FF // all are possible
+#define CELL_INIT 0x1FF /* all are possible */
 
 #define SUBSQUARESIZE 3
 #define MAXSIZE (SUBSQUARESIZE * SUBSQUARESIZE)
@@ -14,3 +14,4 @@ int board_read(boardptr b);
 void board_print(boardptr b);
 
 int board_solve(boardptr b);
+int board_issolved(boardptr b);
