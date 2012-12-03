@@ -25,12 +25,3 @@ void input(int* board[]) {
             isover = 1;
     }
 }
-
-void output(int* board[]) {
-    for(int i = 0; i < MAXSIZE; i++) {
-        for(int j = 0; j < MAXSIZE; j++) {
-            printf("%d", board[i][j], "\t");
-        }
-        printf("\n");
-    }
-}
