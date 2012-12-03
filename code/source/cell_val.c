@@ -12,6 +12,6 @@ int cell_val(int cell) {
         if (TESTBIT(i, cell))
             return i;
 
-    // can't reach this
+    /* can't reach this */
     return -1;
 }

@@ -2,14 +2,14 @@
 #include "bitmanip.h"
 #include "helpers.h"
 
-void board_addconstraint(boardptr b, int row, int col, int value) {
+void board_removeconstraint(boardptr b, int row, int col, int value) {
     /* update constraint for row */
     for (int i = 0; i < MAXSIZE; ++i)
-        b[row][i] = CLEARBIT(value, b[row][i]);
+        b[row][i] = SETBIT(value, b[row][i]);
 
     /* update constraint for col */
     for (int i = 0; i < MAXSIZE; ++i)
-        b[i][col] = CLEARBIT(value, b[i][col]);
+        b[i][col] = SETBIT(value, b[i][col]);
 
     /* update constraint for sub-square */
     int minrow = 0,
@@ -19,5 +19,5 @@ void board_addconstraint(boardptr b, int row, int col, int value) {
     subsquare(row, col, &minrow, &maxrow, &mincol, &maxcol);
     for (int i = minrow; i <= maxrow; ++i)
         for (int j = mincol ; j <= maxcol; ++j)
-            b[i][j] = CLEARBIT(value, b[i][j]);
+            b[i][j] = SETBIT(value, b[i][j]);
 }
