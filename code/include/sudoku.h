@@ -4,6 +4,8 @@
 #define TESTBIT(b, n) (BIT(b) & (n))
 #define CELL_INIT 0x1FF // all are possible
 
+#define MAXSIZE 9
+
 typedef int (* boardptr)[9];
 typedef int board[][9];
 
@@ -12,7 +14,7 @@ void board_delete(boardptr b);
 
 void board_print(boardptr b);
 
-int board_isvalid(boardptr b);
+int board_issolved(boardptr b);
 
 int cell_val(int cell);
 
