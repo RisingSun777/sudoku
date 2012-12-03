@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include <conio.h>
 #include "sudoku.h"
-
+#define MAXSIZE 9
+ 
 void push(int* board[], int row, int col, int val) {
     board[row - 1][col - 1] = val;
 }
 
 void input(int* board[]) {
-    bool isover = false;
+    int isover = 0;
     int col, row, val;
     
     while(!isover) {
@@ -21,8 +21,8 @@ void input(int* board[]) {
         push(board, row, col, val);
     
         printf("Continue adding (y/n)?");
-        if(getch() == 'y')
-            isover = true;
+        if(getchar() == 'y')
+            isover = 1;
     }
 }
 
