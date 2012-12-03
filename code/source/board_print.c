@@ -7,17 +7,21 @@ void board_print(boardptr b) {
         return;
 
     for (int i = 0; i < MAXSIZE; ++i) {
+        if (i % 3 == 0)
+            printf("-------------------------\n");
         for (int j = 0; j < MAXSIZE; ++j) {
+            if (j % 3 == 0)
+                printf("| ");
+
             if (cell_val(b[i][j]) == 10)
                 printf(". ");
             else
                 printf("%d ", cell_val(b[i][j]));
 
-            if ((j + 1) % 3 == 0 && j != MAXSIZE - 1)
-                printf("| ");
+            if (j == MAXVAL - 1)
+                printf("|\n");
         }
-        printf("\b\n");
-        if ((i + 1) % 3 == 0 && i != MAXSIZE - 1)
-            printf("---------------------\n");
+        if (i == MAXVAL - 1)
+            printf("-------------------------\n");
     }
 }
