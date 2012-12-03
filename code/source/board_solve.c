@@ -1,5 +1,4 @@
 #include "sudoku.h"
 
-void solveSudoku(boardptr b) {
-
+void board_solve(boardptr b) {
 }

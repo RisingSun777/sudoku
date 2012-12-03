@@ -7,7 +7,7 @@ void push(boardptr board, int row, int col, int val) {
     board[row - 1][col - 1] = v;
 }
 
-void input(boardptr board) {
+void board_read(boardptr board) {
     int isover = 0;
     int col, row, val;
     
