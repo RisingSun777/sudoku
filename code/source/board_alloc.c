@@ -2,11 +2,11 @@
 #include "sudoku.h"
 
 boardptr board_new(void) {
-    int (* board)[9] = calloc(1, 9 * 9 * sizeof(int));
-    for (int i = 0; i < 9; ++i)
-        for (int j = 0; j < 9; ++j)
-            board[i][j] = CELL_INIT;
-    return board;
+    boardptr b = calloc(1, MAXSIZE * MAXSIZE * sizeof(int));
+    for (int i = 0; i < MAXSIZE; ++i)
+        for (int j = 0; j < MAXSIZE; ++j)
+            b[i][j] = CELL_INIT;
+    return b;
 }
 
 void board_delete(boardptr b) {
