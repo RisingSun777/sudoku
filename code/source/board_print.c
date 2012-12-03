@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include "sudoku.h"
 
-void board_print(int (* board)[9]) {
+void board_print(boardptr b) {
     for (int i = 0; i < 9; ++i) {
         for (int j = 0; j < 9; ++j) {
-            if (cell_val(board[i][j]) == 10)
+            if (cell_val(b[i][j]) == 10)
                 printf(". ");
             else
-                printf("%d ", cell_val(board[i][j]));
+                printf("%d ", cell_val(b[i][j]));
 
             if ((j + 1) % 3 == 0 && j != 8)
                 printf("| ");
