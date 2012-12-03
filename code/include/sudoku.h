@@ -1,21 +1,16 @@
-#define BIT(x) (1 << ((x) - 1))
-#define SETBIT(b, n) (n) = ((n) | BIT(b))
-#define CLEARBIT(b, n) (n) = (~BIT(b) & (n))
-#define TESTBIT(b, n) (BIT(b) & (n))
 #define CELL_INIT 0x1FF // all are possible
 
-#define MAXSIZE 9
+#define SUBSQUARESIZE 3
+#define MAXSIZE (SUBSQUARESIZE * SUBSQUARESIZE)
+#define MAXVAL MAXSIZE
 
-typedef int (* boardptr)[9];
-typedef int board[][9];
+typedef int (* boardptr)[MAXSIZE];
+typedef int board[][MAXSIZE];
 
 boardptr board_new(void);
 void board_delete(boardptr b);
 
+int board_read(boardptr b);
 void board_print(boardptr b);
 
-int board_issolved(boardptr b);
-
-int cell_val(int cell);
-
-int countones(int n);
+int board_solve(boardptr b);
