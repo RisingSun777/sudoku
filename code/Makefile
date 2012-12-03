@@ -8,7 +8,7 @@ OBJDIR=../obj/
 INC=$(addprefix -I, $(INCDIRS))
 
 CC=gcc
-CFLAGS=-g -std=gnu99 -pedantic -Wall -Wextra $(INC)
+CFLAGS=-g -std=c99 -pedantic -Wall -Wextra $(INC)
 LDLIBS=
 
 SOURCES=$(wildcard $(SRCDIR)*.c)
