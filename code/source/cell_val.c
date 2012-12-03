@@ -1,3 +1,4 @@
+#include "bitmanip.h"
 #include "sudoku.h"
 
 int cell_val(int cell) {
@@ -7,7 +8,7 @@ int cell_val(int cell) {
     else if (ones == 0)
         return 0;
 
-    for (int i = 1; i <= 9; ++i)
+    for (int i = 1; i <= MAXVAL; ++i)
         if (TESTBIT(i, cell))
             return i;
 
