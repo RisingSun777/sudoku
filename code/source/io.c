@@ -2,11 +2,13 @@
 #include "sudoku.h"
 #define MAXSIZE 9
  
-void push(int* board[], int row, int col, int val) {
-    board[row - 1][col - 1] = val;
+void push(boardptr board, int row, int col, int val) {
+    int v = 0;
+    SETBIT(val, v);
+    board[row - 1][col - 1] = v;
 }
 
-void input(int* board[]) {
+void input(boardptr board) {
     int isover = 0;
     int col, row, val;
     
