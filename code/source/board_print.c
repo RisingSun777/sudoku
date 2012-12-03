@@ -5,7 +5,7 @@ void board_print(int (* board)[9]) {
     for (int i = 0; i < 9; ++i) {
         for (int j = 0; j < 9; ++j) {
             if (countones(board[i][j]) == 1)
-                printf("%d ", board[i][j]);
+                printf("%d ", cell_val(board[i][j]));
             else
                 printf(". ");
 
