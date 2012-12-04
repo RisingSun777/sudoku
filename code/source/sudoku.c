@@ -2,13 +2,24 @@
 #include "sudoku.h"
 #include "bitmanip.h"
 
-int main(void) {
+int main(int argc, char* argv[]) {
+    void (*board_print)(boardptr) = board_normalprint;
     boardptr b = board_new();
 
-    board_read(b);
-    //board_solve(b);
-    board_print(b);
-    printf("%d\n", board_issolved(b));
+    /* parse command line */
+    while (--argc > 0 && (*++argv)[0] == '-') {
+        char c = *++argv[0];
+        if (c == 'p')
+            board_print = board_prettyprint;
+        else
+            board_print = board_normalprint;
+    }
+
+    if (board_read(b) == 0) {
+        /* board_solve(b); */
+        board_print(b);
+        printf("%d\n", board_issolved(b));
+    }
 
     for (int i = 0; i < MAXSIZE; ++i)
         for (int j = 0; j < MAXSIZE; ++j)

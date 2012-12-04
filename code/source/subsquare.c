@@ -9,7 +9,7 @@ int subsquare(int row, int col,
     *minrow = (row / SUBSQUARESIZE) * SUBSQUARESIZE;
     *maxrow = *minrow + SUBSQUARESIZE - 1;
     *mincol = (col / SUBSQUARESIZE) * SUBSQUARESIZE;
-    *maxrow = *minrow + SUBSQUARESIZE - 1;
+    *maxcol = *mincol + SUBSQUARESIZE - 1;
 
     return 0;
 }
