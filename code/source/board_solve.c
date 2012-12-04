@@ -1,4 +1,5 @@
 #include "sudoku.h"
+#include "helpers.h"
 #include "bitmanip.h"
 
 void helper_solve(boardptr b, int starti, int startj) {
@@ -31,7 +32,7 @@ void helper_solve(boardptr b, int starti, int startj) {
     helper_solve(b, starti, startj);
 }
 
-int board_solve(boardptr b, int starti, int startj) {
+int board_solve(boardptr b) {
     if(board_issolved(b))
         return 1;
 
