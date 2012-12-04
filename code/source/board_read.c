@@ -21,10 +21,10 @@ int board_read(boardptr b) {
             c = getchar();
             if (c <= '9' && c >= '0') {
                 val = c - '0';
-                //if (val <= MAXVAL && val >= 1)
+                /* if (val <= MAXVAL && val >= 1) */
                 board_setcell(b, i, j, val);
             } else if (c == '.') {
-                // official ignored char
+                /* official ignored char */
             }
         }
 
