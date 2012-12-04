@@ -25,7 +25,8 @@ int board_read(boardptr b) {
                 board_setcell(b, i, j, val);
             } else if (c == '.') {
                 /* official ignored char */
-            }
+            } else
+                return -2;
         }
 
     return 0;

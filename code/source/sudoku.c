@@ -15,10 +15,11 @@ int main(int argc, char* argv[]) {
             board_print = board_normalprint;
     }
 
-    board_read(b);
-    /* board_solve(b); */
-    board_print(b);
-    printf("%d\n", board_issolved(b));
+    if (board_read(b) == 0) {
+        /* board_solve(b); */
+        board_print(b);
+        printf("%d\n", board_issolved(b));
+    }
 
     for (int i = 0; i < MAXSIZE; ++i)
         for (int j = 0; j < MAXSIZE; ++j)
