@@ -16,5 +16,9 @@
 *.out
 *.app
 
+# Ignore Output
+out/
+obj/
+
 # Temporary files
 *.swp
