@@ -2,7 +2,7 @@
 #include "sudoku.h"
 #include "helpers.h"
 
-void board_print(boardptr b) {
+void board_prettyprint(boardptr b) {
     if (!b)
         return;
 
@@ -23,5 +23,16 @@ void board_print(boardptr b) {
         }
         if (i == MAXVAL - 1)
             printf("-------------------------\n");
+    }
+}
+
+void board_normalprint(boardptr b) {
+    if (!b)
+        return;
+
+    for (int i = 0; i < MAXSIZE; ++i) {
+        for (int j = 0; j < MAXSIZE; ++j)
+            printf("%d ", cell_val(b[i][j]));
+        printf("\n");
     }
 }

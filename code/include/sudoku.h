@@ -11,7 +11,8 @@ boardptr board_new(void);
 void board_delete(boardptr b);
 
 int board_read(boardptr b);
-void board_print(boardptr b);
+void board_prettyprint(boardptr b);
+void board_normalprint(boardptr b);
 
 int board_solve(boardptr b);
 int board_issolved(boardptr b);
