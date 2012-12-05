@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 
     for (int i = 0; i < MAXSIZE; ++i)
         for (int j = 0; j < MAXSIZE; ++j)
-            b[i][j] = BIT(j + 1);
+            b[i][j].constraints = BIT(j + 1);
     board_print(b);
     printf("%d\n", board_issolved(b));
 

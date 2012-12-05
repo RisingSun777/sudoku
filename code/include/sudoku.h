@@ -4,6 +4,10 @@
 #define MAXSIZE (SUBSQUARESIZE * SUBSQUARESIZE)
 #define MAXVAL MAXSIZE
 
+typedef struct _cell {
+    int constraints;
+    int fixed;
+} cell;
 typedef int (* boardptr)[MAXSIZE];
 typedef int board[][MAXSIZE];
 

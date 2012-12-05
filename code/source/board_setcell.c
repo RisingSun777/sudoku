@@ -4,5 +4,5 @@
 
 void board_setcell(boardptr b, int row, int col, int value) {
     board_addconstraint(b, row, col, value);
-    b[row][col] = SETBIT(value, 0);
+    b[row][col].constraints = SETBIT(value, 0);
 }

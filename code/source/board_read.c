@@ -10,6 +10,13 @@ void ignorespace() {
     ungetc(c, stdin);
 }
  
+void updateFixedValues(boardptr b) {
+    for(int i = 0; i < MAXSIZE; i++)
+        for(int j = 0; j < MAXSIZE; j++)
+            if(b[i][j].constraints != '.')
+                b[i][j].fixed = 1;
+}
+ 
 int board_read(boardptr b) {
     if (!b)
         return -1;
@@ -28,6 +35,8 @@ int board_read(boardptr b) {
             } else
                 return -2;
         }
+        
+    updateFixedValues(b);
 
     return 0;
 }
