@@ -13,10 +13,14 @@ void board_prettyprint(boardptr b) {
             if (j % 3 == 0)
                 printf("| ");
 
-            if (cell_val(b[i][j]) == 10)
+            int val = cell_val(b[i][j]);
+
+            if (val == 10)
                 printf(". ");
+            else if (val == -1)
+                printf("x ");
             else
-                printf("%d ", cell_val(b[i][j]));
+                printf("%d ", val);
 
             if (j == MAXVAL - 1)
                 printf("|\n");
@@ -31,8 +35,16 @@ void board_normalprint(boardptr b) {
         return;
 
     for (int i = 0; i < MAXSIZE; ++i) {
-        for (int j = 0; j < MAXSIZE; ++j)
-            printf("%d ", cell_val(b[i][j]));
+        for (int j = 0; j < MAXSIZE; ++j) {
+            int val = cell_val(b[i][j]);
+
+            if (val == 10)
+                printf(". ");
+            else if (val == -1)
+                printf("x ");
+            else
+                printf("%d ", val);
+        }
         printf("\n");
     }
 }
