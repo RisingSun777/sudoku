@@ -10,13 +10,6 @@ void ignorespace() {
     ungetc(c, stdin);
 }
  
-void updateFixedValues(boardptr b) {
-    for(int i = 0; i < MAXSIZE; i++)
-        for(int j = 0; j < MAXSIZE; j++)
-            if(b[i][j].constraints != '.')
-                b[i][j].fixed = 1;
-}
- 
 int board_read(boardptr b) {
     if (!b)
         return -1;
@@ -29,14 +22,16 @@ int board_read(boardptr b) {
             if (c <= '9' && c >= '0') {
                 val = c - '0';
                 /* if (val <= MAXVAL && val >= 1) */
+                
+                //board_setcell(b, i, j, val);
+                //b[i][j].constraints = (1 << (val - 1));
                 board_setcell(b, i, j, val);
+                b[i][j].fixed = 1; //update fixed condition for the cell
             } else if (c == '.') {
                 /* official ignored char */
             } else
                 return -2;
         }
-        
-    updateFixedValues(b);
 
     return 0;
 }

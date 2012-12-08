@@ -14,18 +14,12 @@ int main(int argc, char* argv[]) {
         else
             board_print = board_normalprint;
     }
-
+    
     if (board_read(b) == 0) {
-        /* board_solve(b); */
+        board_solve(b);
         board_print(b);
         printf("%d\n", board_issolved(b));
     }
-
-    for (int i = 0; i < MAXSIZE; ++i)
-        for (int j = 0; j < MAXSIZE; ++j)
-            b[i][j].constraints = BIT(j + 1);
-    board_print(b);
-    printf("%d\n", board_issolved(b));
 
     board_delete(b);
 }

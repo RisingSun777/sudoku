@@ -8,8 +8,8 @@ typedef struct _cell {
     int constraints;
     int fixed;
 } cell;
-typedef int (* boardptr)[MAXSIZE];
-typedef int board[][MAXSIZE];
+typedef cell (* boardptr)[MAXSIZE];
+typedef cell board[][MAXSIZE];
 
 boardptr board_new(void);
 void board_delete(boardptr b);
