@@ -4,7 +4,7 @@
 int cell_val(int cell) {
     int ones = countones(cell);
     if (ones > 1)
-        return 10;
+        return MAXVAL + 1;
     else if (ones == 0)
         return 0;
 
