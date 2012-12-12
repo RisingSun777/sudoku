@@ -5,7 +5,7 @@ int board_validconstraint(boardptr b, int row, int col);
 
 void board_setcell(boardptr b, int row, int col, int value);
 
-int cell_val(int cell);
+int cell_val(cell c);
 int subsquare(int row, int col,
               int* minrow, int* maxrow,
               int* mincol, int* maxcol);
